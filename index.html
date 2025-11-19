@@ -3,154 +3,391 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gayathri S K | Data Science & AI</title>
+  <title>Gayathri S K | Portfolio</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons (for Python, SQL, etc. CDN logos) -->
   <style>
-    /* ---------- GLOBAL STYLES ---------- */
     body {
       margin: 0;
-      font-family: "Poppins", Arial, sans-serif;
-      background: #f2f6fa;
-      color: #333;
+      font-family: "Poppins", sans-serif;
+      background: #0a0a0a;
+      color: #eee;
+      scroll-behavior: smooth;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    h1, h2 {
+    h1, h2, h3 {
+      margin: 0;
       font-weight: 600;
     }
 
-    /* ---------- HEADER / HERO ---------- */
-    header {
-      background: linear-gradient(135deg, #2d2f78, #6a52d9);
-      color: #fff;
+    /* NAVIGATION */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      background: #0a0a0aee;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: #b179ff;
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #ccc;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b179ff;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 120px 20px;
       text-align: center;
-      padding: 80px 20px;
-      clip-path: ellipse(90% 100% at 50% 0%);
+      background: linear-gradient(180deg, #1b1b1b, #0a0a0a);
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    .hero h1 {
+      font-size: 3.2rem;
+      color: #b179ff;
+      text-shadow: 0 0 20px rgba(177, 121, 255, 0.7);
     }
 
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    /* ---------- CONTAINER ---------- */
+    /* SECTION WRAPPER */
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding-bottom: 40px;
     }
 
     section {
-      background: #fff;
-      padding: 25px 30px;
-      margin-bottom: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
+      background: #141414;
+      padding: 40px;
+      margin-top: 40px;
+      border-radius: 18px;
+      border: 1px solid #262626;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(177, 121, 255, 0.03);
     }
 
     section:hover {
+      border-color: #b179ff;
+      box-shadow: 0 0 35px rgba(177, 121, 255, 0.15);
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
     h2 {
-      margin-top: 0;
-      color: #2d2f78;
+      color: #b179ff;
+      margin-bottom: 15px;
       font-size: 1.8rem;
-      border-left: 5px solid #6a52d9;
-      padding-left: 10px;
     }
 
-    ul {
-      margin: 0;
-      padding-left: 20px;
+    p {
       line-height: 1.7;
+      opacity: 0.9;
     }
 
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #2d2f78;
-      color: #fff;
+    /* SKILL TAGS WITH ICONS */
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #1f1f1f;
+      padding: 12px 18px;
+      border-radius: 30px;
+      border: 1px solid #333;
+      transition: 0.3s;
       font-size: 0.9rem;
+    }
+
+    .skill img {
+      width: 22px;
+      height: 22px;
+    }
+
+    .skill:hover {
+      background: #b179ff;
+      color: #000;
+      transform: scale(1.1);
+      border-color: #b179ff;
+    }
+
+    /* PROJECT CARDS */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #b179ff;
+      box-shadow: 0 0 30px rgba(177, 121, 255, 0.2);
+    }
+
+    .tech-icons img {
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .role {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin: 5px 0 10px;
+    }
+
+    /* CERTIFICATION CARDS */
+    .cert-card {
+      background: #1a1a1a;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 12px;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .cert-card:hover {
+      border-color: #b179ff;
+      transform: translateY(-5px);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      text-align: center;
+      color: #888;
+      background: #0a0a0a;
+      border-top: 1px solid #222;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
-  <header>
+  <!-- NAVBAR -->
+  <nav>
+    <h1>Gayathri</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
     <h1>Gayathri S K</h1>
-    <p>Graduate Engineer Trainee at SQ1 Security · Data Science & AI Practitioner</p>
-  </header>
+    <p>AI Engineer • Data Scientist • ML Developer</p>
+  </div>
 
   <div class="container">
 
     <!-- ABOUT -->
-    <section>
+    <section id="about">
       <h2>About Me</h2>
       <p>
-        I am a Data Science & AI practitioner with hands-on experience in Machine Learning, Deep Learning, NLP,
-        Computer Vision, and Data Analytics. I completed a Data Science & AI certification (GUVI & NSDC) and
-        currently work as a Graduate Engineer Trainee at SQ1 Security.  
-        I enjoy solving real-world problems and have completed multiple projects in analytics, ML, and deep learning.
+        I'm a passionate Data Science & AI practitioner with hands-on experience in Machine Learning, 
+        Deep Learning, NLP, Large Language Models, Computer Vision, and Analytics.  
+        I enjoy developing real-world AI solutions — from dashboards to deep learning detection systems.
+        Currently, I work as a Graduate Engineer Trainee at SQ1 Security.
       </p>
     </section>
 
     <!-- SKILLS -->
-    <section>
+    <section id="skills">
       <h2>Skills</h2>
-      <ul>
-        <li>Machine Learning & Deep Learning</li>
-        <li>NLP, LLMs, Generative AI</li>
-        <li>Computer Vision (YOLO, CNN, VGG16)</li>
-        <li>Python, Pandas, NumPy</li>
-        <li>SQL</li>
-        <li>Power BI</li>
-        <li>Data Cleaning & Preprocessing</li>
-      </ul>
+
+      <div class="skill-grid">
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">Python</div>
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg">PyTorch</div>
+        <div class="skill"><img src="https://skillicons.dev/icons?i=sklearn">Scikit-learn</div>
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg">SQL</div>
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg">NumPy</div>
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">Pandas</div>
+        <div class="skill"><img src="https://skillicons.dev/icons?i=powerbi">Power BI</div>
+        <div class="skill"><img src="https://skillicons.dev/icons?i=opencv">Computer Vision</div>
+        <div class="skill"><img src="https://skillicons.dev/icons?i=streamlit">Streamlit</div>
+        <div class="skill"><img src="https://skillicons.dev/icons?i=tensorflow">Deep Learning</div>
+        <div class="skill"><img src="https://skillicons.dev/icons?i=python">Data Cleaning</div>
+      </div>
     </section>
 
     <!-- PROJECTS -->
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>Game Analytics Dashboard</li>
-        <li>Bird Species Observation Analysis</li>
-        <li>Crop Production Prediction (FAOSTAT)</li>
-        <li>Tourism Experience Analytics</li>
-        <li>Solar Panel Defect Detection (Deep Learning)</li>
-        <li>VGG16 + YOLOv8 Streamlit App</li>
-        <li>GUVI Chatbot</li>
-      </ul>
+    <section id="projects">
+      <h2>Projects (Detailed)</h2>
+
+      <div class="project-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+          <h3>1. Game Analytics Dashboard</h3>
+          <p class="role">Developer & Analyst</p>
+          <div class="tech-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">
+            <img src="https://skillicons.dev/icons?i=powerbi">
+          </div>
+          <p>
+            Built an interactive dashboard to analyze player behaviour, retention, monetization and performance patterns.
+            Included cohort, funnel analysis, and event-log preprocessing.
+          </p>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+          <h3>2. Bird Species Observation Analysis</h3>
+          <p class="role">Data Scientist</p>
+          <div class="tech-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">
+            <img src="https://skillicons.dev/icons?i=matplotlib">
+          </div>
+          <p>
+            Analyzed bird observation datasets for species distribution, hotspots, and migration insights using GeoPandas 
+            and visualization techniques.
+          </p>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+          <h3>3. Crop Production Prediction</h3>
+          <p class="role">Machine Learning Engineer</p>
+          <div class="tech-icons">
+            <img src="https://skillicons.dev/icons?i=python">
+            <img src="https://skillicons.dev/icons?i=sklearn">
+            <img src="https://skillicons.dev/icons?i=xgboost">
+          </div>
+          <p>
+            Forecasted crop production using FAOSTAT historical data. Performed EDA, missing value handling, feature 
+            engineering, and trained XGBoost models.
+          </p>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+          <h3>4. Tourism Experience Analytics</h3>
+          <p class="role">Data Analyst</p>
+          <div class="tech-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg">
+            <img src="https://skillicons.dev/icons?i=powerbi">
+          </div>
+          <p>
+            Analyzed tourist behaviour, satisfaction, seasons and destination popularity. Built dashboards for strategy 
+            and marketing decisions.
+          </p>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+          <h3>5. Solar Panel Defect Detection</h3>
+          <p class="role">Deep Learning Engineer</p>
+          <div class="tech-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg">
+            <img src="https://skillicons.dev/icons?i=tensorflow">
+          </div>
+          <p>
+            Designed CNN-based defect detection for solar panel images. Implemented augmentation, evaluation 
+            (precision, recall, F1), and deep learning workflow.
+          </p>
+        </div>
+
+        <!-- PROJECT 6 -->
+        <div class="project-card">
+          <h3>6. VGG16 + YOLOv8 Detection App</h3>
+          <p class="role">ML Developer</p>
+          <div class="tech-icons">
+            <img src="https://skillicons.dev/icons?i=python">
+            <img src="https://skillicons.dev/icons?i=pytorch">
+            <img src="https://skillicons.dev/icons?i=streamlit">
+          </div>
+          <p>
+            Built a two-tab Streamlit app for image classification (VGG16) and object detection (YOLOv8). 
+            Trained YOLOv8n and YOLOv8s models on custom dataset.
+          </p>
+        </div>
+
+        <!-- PROJECT 7 -->
+        <div class="project-card">
+          <h3>7. GUVI Chatbot</h3>
+          <p class="role">NLP Developer</p>
+          <div class="tech-icons">
+            <img src="https://skillicons.dev/icons?i=python">
+            <img src="https://skillicons.dev/icons?i=pytorch">
+            <img src="https://skillicons.dev/icons?i=ai">
+          </div>
+          <p>
+            Designed an intelligent chatbot using LLMs and RAG to answer learner queries. 
+            Implemented NLP preprocessing and prompt-engineering for accuracy.
+          </p>
+        </div>
+
+      </div>
     </section>
 
-    <!-- CURRENT ROLE -->
-    <section>
-      <h2>Current Role</h2>
-      <p>
-        Working as a <strong>Graduate Engineer Trainee</strong> at <strong>SQ1 Security</strong>, contributing to
-        projects involving data analytics, automation, dashboards, and AI-driven solutions.
-      </p>
-    </section>
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <h2>Certifications</h2>
 
-    <!-- EDUCATION -->
-    <section>
-      <h2>Education</h2>
-      <p>B.E. Electronics and Communication Engineering (ECE), REC — 2023</p>
+      <!-- Certification 1 -->
+      <div class="cert-card">
+        <h3>Data Science & AI Certification — GUVI & NSDC</h3>
+        <p>
+          Includes Python, Data Cleaning, SQL, Machine Learning, Deep Learning, NLP, LLMs, Power BI, Computer Vision.
+        </p>
+      </div>
+
+      <!-- Certification 2 -->
+      <div class="cert-card">
+        <h3>Machine Learning & Deep Learning Project Certifications</h3>
+        <p>
+          Completed multiple guided and independent projects across CNNs, object detection, dashboards and forecasting.
+        </p>
+      </div>
+
+      <!-- Certification 3 -->
+      <div class="cert-card">
+        <h3>Python & Data Analytics Coursework</h3>
+        <p>
+          Hands-on practice with Python, Pandas, NumPy, EDA and visualization.
+        </p>
+      </div>
     </section>
 
   </div>
