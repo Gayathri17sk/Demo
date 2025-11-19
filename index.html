@@ -3,89 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gayathri S K - Portfolio</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Gayathri S K | Data Science & AI</title>
 
   <style>
+    /* ---------- GLOBAL STYLES ---------- */
     body {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: #f5f7fa;
+      font-family: "Poppins", Arial, sans-serif;
+      background: #f2f6fa;
       color: #333;
-      scroll-behavior: smooth;
     }
 
-    /* ----- NAVBAR ----- */
-    nav {
-      background: #222;
-      padding: 15px 40px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #fff;
-    }
-
-    nav a {
-      color: #fff;
-      margin-left: 20px;
+    a {
       text-decoration: none;
-      font-weight: 400;
-      transition: 0.3s;
+      color: inherit;
     }
 
-    nav a:hover {
-      color: #00b7ff;
+    h1, h2 {
+      font-weight: 600;
     }
 
-    /* ----- HERO SECTION ----- */
-    .hero {
-      height: 90vh;
-      background: linear-gradient(to right, #141e30, #243b55);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    /* ---------- HEADER / HERO ---------- */
+    header {
+      background: linear-gradient(135deg, #2d2f78, #6a52d9);
       color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 80px 20px;
+      clip-path: ellipse(90% 100% at 50% 0%);
     }
 
-    .hero h1 {
+    header h1 {
       font-size: 3rem;
-      margin: 0;
-      animation: fadeIn 1.2s ease-in-out;
+      margin-bottom: 10px;
     }
 
-    .hero p {
-      font-size: 1.3rem;
-      margin-top: 10px;
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ----- CONTAINER SECTIONS ----- */
+    /* ---------- CONTAINER ---------- */
     .container {
       max-width: 1000px;
       margin: 40px auto;
-      padding: 20px;
+      padding: 0 20px;
     }
 
     section {
       background: #fff;
-      margin: 40px 0;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      padding: 25px 30px;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
     }
 
     section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #2d2f78;
+      font-size: 1.8rem;
+      border-left: 5px solid #6a52d9;
+      padding-left: 10px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.7;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #2d2f78;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <header>
+    <h1>Gayathri S K</h1>
+    <p>Graduate Engineer Trainee at SQ1 Security · Data Science & AI Practitioner</p>
+  </header>
+
+  <div class="container">
+
+    <!-- ABOUT -->
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I am a Data Science & AI practitioner with hands-on experience in Machine Learning, Deep Learning, NLP,
+        Computer Vision, and Data Analytics. I completed a Data Science & AI certification (GUVI & NSDC) and
+        currently work as a Graduate Engineer Trainee at SQ1 Security.  
+        I enjoy solving real-world problems and have completed multiple projects in analytics, ML, and deep learning.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>Machine Learning & Deep Learning</li>
+        <li>NLP, LLMs, Generative AI</li>
+        <li>Computer Vision (YOLO, CNN, VGG16)</li>
+        <li>Python, Pandas, NumPy</li>
+        <li>SQL</li>
+        <li>Power BI</li>
+        <li>Data Cleaning & Preprocessing</li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li>Game Analytics Dashboard</li>
+        <li>Bird Species Observation Analysis</li>
+        <li>Crop Production Prediction (FAOSTAT)</li>
+        <li>Tourism Experience Analytics</li>
+        <li>Solar Panel Defect Detection (Deep Learning)</li>
+        <li>VGG16 + YOLOv8 Streamlit App</li>
+        <li>GUVI Chatbot</li>
+      </ul>
+    </section>
+
+    <!-- CURRENT ROLE -->
+    <section>
+      <h2>Current Role</h2>
+      <p>
+        Working as a <strong>Graduate Engineer Trainee</strong> at <strong>SQ1 Security</strong>, contributing to
+        projects involving data analytics, automation, dashboards, and AI-driven solutions.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2>Education</h2>
+      <p>B.E. Electronics and Communication Engineering (ECE), REC — 2023</p>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2025 Gayathri S K | Data Science & AI Portfolio
+  </footer>
+
+</body>
+</html>
